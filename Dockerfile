@@ -4,6 +4,7 @@
 
 FROM ubuntu:18.04
 MAINTAINER lamaral <email@lamaral.com.br>
+ENV TZ=America/Chicago
 
 # Update System
 RUN apt-get update && apt-get upgrade -y -o DPkg::Options::=--force-confold
