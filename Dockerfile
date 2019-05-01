@@ -11,13 +11,13 @@ RUN apt-get update && apt-get upgrade -y -o DPkg::Options::=--force-confold
 # Add PPA
 
 RUN apt-get install -y software-properties-common dmidecode apt-utils wget
-RUN wget -O - https://repo.saltstack.com/py3/ubuntu/18.04/amd64/2018.3/SALTSTACK-GPG-KEY.pub | apt-key add -
-RUN echo "deb https://repo.saltstack.com/py3/ubuntu/18.04/amd64/2018.3 bionic main" > /etc/apt/sources.list.d/saltstack.list
+RUN wget -O - https://repo.saltstack.com/py3/ubuntu/18.04/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add -
+RUN echo "deb https://repo.saltstack.com/py3/ubuntu/18.04/amd64/latest bionic main" > /etc/apt/sources.list.d/saltstack.list
 RUN apt-get update
 
 # Install Salt
 
-RUN apt-get install -y salt-master=2018.3.0+ds-1
+RUN apt-get install -y salt-master=2019.2.0+ds-1
 
 # Volumes
 
