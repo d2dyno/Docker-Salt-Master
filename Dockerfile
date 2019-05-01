@@ -17,7 +17,7 @@ RUN apt-get update
 
 # Install Salt
 
-RUN apt-get install -y salt-master=2018.3.0+ds-1
+RUN apt-get install -y salt-master=2018.3.4~git20180207+dfsg1-1
 
 # Volumes
 
