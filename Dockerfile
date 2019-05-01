@@ -8,6 +8,8 @@ ENV TZ=America/Chicago
 
 # Update System
 RUN apt-get update && apt-get upgrade -y -o DPkg::Options::=--force-confold
+# Set timezone
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Add PPA
 
