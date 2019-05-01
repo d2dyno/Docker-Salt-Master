@@ -2,7 +2,7 @@
 # Salt Stack Salt Master Container
 #
 
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 MAINTAINER lamaral <email@lamaral.com.br>
 
 # Update System
@@ -11,8 +11,8 @@ RUN apt-get update && apt-get upgrade -y -o DPkg::Options::=--force-confold
 # Add PPA
 
 RUN apt-get install -y software-properties-common dmidecode apt-utils wget
-RUN wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add -
-RUN echo "deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main" > /etc/apt/sources.list.d/saltstack.list
+RUN wget -O - https://repo.saltstack.com/py3/ubuntu/18.04/amd64/2018.3/SALTSTACK-GPG-KEY.pub | apt-key add -
+RUN echo "deb https://repo.saltstack.com/py3/ubuntu/18.04/amd64/2018.3 bionic main" > /etc/apt/sources.list.d/saltstack.list
 RUN apt-get update
 
 # Install Salt
